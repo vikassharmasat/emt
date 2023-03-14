@@ -2,9 +2,11 @@ import { styles } from "../employee-list.style";
 import { ScrollView, TouchableOpacity } from "react-native";
 import { Avatar, ListItem } from "@rneui/themed";
 import React from "react";
+
 import { EmployeeListItemDetail } from "../employee-list-item-detail/employee-list-item-detail";
 
-export const EmployeeListItem = ( { item, navigation,...props } ) => {
+export const EmployeeListItem = ( { item,navigation } ) => {
+
 
     return (
         <ScrollView style={ styles.item }>

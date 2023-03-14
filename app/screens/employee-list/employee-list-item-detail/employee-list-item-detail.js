@@ -1,7 +1,7 @@
 import { View,Image,Text } from "react-native";
 import { Card } from "@rneui/themed";
 
-export const EmployeeListItemDetail = (props) => {
+export const EmployeeListItemDetail = () => {
     return (
         <>
             <Card.Title>CARD WITH DIVIDER</Card.Title>

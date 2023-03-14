@@ -3,11 +3,13 @@ import { SafeAreaView, FlatList } from "react-native";
 import { styles } from "./employee-list.style";
 import { ajax } from "../../../util/axios/axios";
 import {EmployeeListItem} from "./employee-list-item/employee-list-item";
+import { useNavigation } from "@react-navigation/native";
 
 
 export const EmployeeList = () => {
 
     const [ empList, setEmpList ] = useState( [] );
+    const navigation = useNavigation();
 
     useEffect( () => {
         const usersList = async () => {
@@ -22,12 +24,17 @@ export const EmployeeList = () => {
         usersList();
     }, [] );
 
+    const RenderItem = ({ item }) => {
+        return (
+            <EmployeeListItem item={item} navigation={navigation}></EmployeeListItem>
+        )
+    }
 
     return (
         <SafeAreaView style={ styles.container }>
             <FlatList
                 data={ empList }
-                renderItem={ EmployeeListItem }
+                renderItem={ RenderItem }
                 keyExtractor={ item => item.login.uuid }
             />
         </SafeAreaView>
