@@ -23,7 +23,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <BottomTab.Navigator initialRouteName={EmployeeList} screenOptions={{headerShown:false}}>
-                <BottomTab.Screen name='Home' component={ EmployeeStack } options={ {
+                <BottomTab.Screen name='Home Screen' component={ EmployeeStack } options={ {
                     tabBarLabel: 'Home',
                     tabBarIcon: ( { color, size } ) => (
                         <MaterialCommunityIcons name="home" color={ color } size={ size }/>
