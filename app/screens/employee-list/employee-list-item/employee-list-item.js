@@ -3,16 +3,14 @@ import { ScrollView, TouchableOpacity } from "react-native";
 import { Avatar, ListItem } from "@rneui/themed";
 import React from "react";
 
-import { EmployeeListItemDetail } from "../employee-list-item-detail/employee-list-item-detail";
-
-export const EmployeeListItem = ( { item,navigation } ) => {
+export const EmployeeListItem = ( { item,navigation:{navigate} } ) => {
 
 
     return (
         <ScrollView style={ styles.item }>
             <TouchableOpacity onPress={ () => {
-                navigation.navigate( 'employee-detail', {
-                    itemId: 86,
+                navigate( 'employee-detail', {
+                    itemId: item.login.uuid,
                     otherParam: 'anything you want here',
                 } );
             } }>

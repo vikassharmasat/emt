@@ -1,4 +1,4 @@
-import { StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
@@ -7,6 +7,8 @@ import {
     EmployeeListItemDetail
 } from "./app/screens/employee-list/employee-list-item-detail/employee-list-item-detail";
 import { EmployeeList } from './app/screens/employee-list/employee-list';
+import { Provider } from 'react-redux'
+import { store } from './app/store/store';
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -31,19 +33,21 @@ const EmployeeStack = () => {
 
 export default function App() {
     return (
-        <NavigationContainer>
-            <BottomTab.Navigator
-                initialRouteName={ EmployeeList }
-                screenOptions={ { headerShown: false } }
-            >
-                <BottomTab.Screen name='Home Screen' component={ EmployeeStack } options={ {
-                    tabBarLabel: 'Home',
-                    tabBarIcon: ( { color, size } ) => (
-                        <MaterialCommunityIcons name="home" color={ color } size={ size }/>
-                    ),
-                } }/>
-            </BottomTab.Navigator>
-        </NavigationContainer>
+        <Provider store={ store }>
+            <NavigationContainer>
+                <BottomTab.Navigator
+                    initialRouteName={ EmployeeList }
+                    screenOptions={ { headerShown: false } }
+                >
+                    <BottomTab.Screen name='Home Screen' component={ EmployeeStack } options={ {
+                        tabBarLabel: 'Home',
+                        tabBarIcon: ( { color, size } ) => (
+                            <MaterialCommunityIcons name="home" color={ color } size={ size }/>
+                        ),
+                    } }/>
+                </BottomTab.Navigator>
+            </NavigationContainer>
+        </Provider>
     );
 }
 

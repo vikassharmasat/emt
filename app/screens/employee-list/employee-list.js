@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView, FlatList } from "react-native";
 import { styles } from "./employee-list.style";
-import { ajax } from "../../../util/axios/axios";
+import { ajax } from "../../util/axios/axios";
 import {EmployeeListItem} from "./employee-list-item/employee-list-item";
 import { useNavigation } from "@react-navigation/native";
 
