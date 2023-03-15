@@ -1,18 +1,44 @@
-import { View,Image,Text } from "react-native";
+import { View, Image, Text ,TouchableOpacity,ScrollView} from "react-native";
 import { Card } from "@rneui/themed";
+import { styles } from "./employee-list-item-detail.style";
+import { Touchable } from "react-native";
 
 export const EmployeeListItemDetail = () => {
     return (
         <>
-            <Card.Title>CARD WITH DIVIDER</Card.Title>
-            <Card.Divider/>
-            <View style={{position:"relative",alignItems:"center"}}>
-                <Image
-                    style={{width:"100%",height:100}}
-                    resizeMode="contain"
-                    source={{ uri: "https://avatars0.githubusercontent.com/u/32242596?s=460&u=1ea285743fc4b083f95d6ee0be2e7bb8dcfc676e&v=4" }}
-                />
-                <Text >Pranshu Chittora</Text>
+            
+           <View style={styles.container}>
+            <View style={styles.cardDiv}>
+                <View style={styles.devideDiv}>
+                    <Image
+                        style={{width:80,height:80,borderRadius:100, padding:2, backgroundColor:"#ccc"}}
+                        resizeMode="cover"
+                        source={{ uri: "https://avatars0.githubusercontent.com/u/32242596?s=460&u=1ea285743fc4b083f95d6ee0be2e7bb8dcfc676e&v=4" }}
+                    />
+                    <View style={styles.userText}>
+                    <Text style={styles.userName}>Pranshu Chittora</Text>
+                    <Text style={styles.phone}> +91 - 9015174477</Text>
+                    </View>
+                </View>
+            </View>            
+            <View style={styles.buttnArea}>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Profile</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Address</Text></TouchableOpacity>      
+                <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Maps</Text></TouchableOpacity>
+                <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Maps</Text></TouchableOpacity>
+                </ScrollView>
+            </View>           
+            <View style={styles.cardDiv}>                
+                <View style={styles.profileArea}>
+                    <Text style={styles.marginBottom}><Text style={styles.textBold}>Designation :</Text> UI/UX Designer</Text>
+                    <Text style={styles.marginBottom}><Text style={styles.textBold}>Address :</Text> Noida Sector 12</Text>
+                    <Text style={styles.marginBottom}><Text style={styles.textBold}>City :</Text> Noida</Text>
+                    <Text style={styles.marginBottom}><Text style={styles.textBold}>State :</Text> Uttar Pradesh</Text>
+                    <Text style={styles.marginBottom}><Text style={styles.textBold}>Nationality :</Text> Indian</Text>
+                    <Text style={styles.marginBottom}><Text style={styles.textBold}>Work  :</Text> AICTE</Text>
+                </View>
+            </View>
             </View>
         </>
     )
