@@ -1,43 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import { SafeAreaView, FlatList } from "react-native";
+import React, { useEffect, useState } from "react";
+import { SafeAreaView, FlatList} from "react-native";
 import { styles } from "./employee-list.style";
 import { ajax } from "../../util/axios/axios";
-import {EmployeeListItem} from "./employee-list-item/employee-list-item";
+import { EmployeeListItem } from "./employee-list-item/employee-list-item";
 import { useNavigation } from "@react-navigation/native";
-
+import { Card } from '@rneui/themed';
 
 export const EmployeeList = () => {
+  const [empList, setEmpList] = useState([]);
+  const navigation = useNavigation();
 
-    const [ empList, setEmpList ] = useState( [] );
-    const navigation = useNavigation();
+  useEffect(() => {
+    const usersList = async () => {
+      const url = "https://randomuser.me/api/?results=100";
+      const output = await ajax("get", url, {});
+      if (!output) {
+        setEmpList([]);
+      } else {
+        setEmpList(output.results);
+      }
+    };
+    usersList();
+  }, []);
 
-    useEffect( () => {
-        const usersList = async () => {
-            const url = 'https://randomuser.me/api/?results=100';
-            const output = await ajax( 'get', url, {} );
-            if ( !output ) {
-                setEmpList( [] );
-            } else {
-                setEmpList( output.results );
-            }
-        };
-        usersList();
-    }, [] );
-
-    const RenderItem = ({ item }) => {
-        return (
-            <EmployeeListItem item={item} navigation={navigation}></EmployeeListItem>
-        )
-    }
-
+  const RenderItem = ({ item }) => {
     return (
-        <SafeAreaView style={ styles.container }>
-            <FlatList
-                data={ empList }
-                renderItem={ RenderItem }
-                keyExtractor={ item => item.login.uuid }
-            />
-        </SafeAreaView>
+      <EmployeeListItem item={item} navigation={navigation}></EmployeeListItem>
     );
-}
+  };
 
+  return (
+    <SafeAreaView style={styles.container}>       
+      <FlatList
+        data={empList}
+        renderItem={RenderItem}
+        keyExtractor={(item) => item.login.uuid}
+      />
+    </SafeAreaView>
+  );
+};

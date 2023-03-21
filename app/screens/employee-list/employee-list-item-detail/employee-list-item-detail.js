@@ -1,7 +1,6 @@
 import { View, Image, Text ,TouchableOpacity,ScrollView} from "react-native";
-import { Card } from "@rneui/themed";
+import { Tab,  TabView } from '@rneui/themed';
 import { styles } from "./employee-list-item-detail.style";
-import { Touchable } from "react-native";
 
 export const EmployeeListItemDetail = () => {
     return (
@@ -20,14 +19,14 @@ export const EmployeeListItemDetail = () => {
                     <Text style={styles.phone}> +91 - 9015174477</Text>
                     </View>
                 </View>
-            </View>            
+            </View>  
             <View style={styles.buttnArea}>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+              <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Profile</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Address</Text></TouchableOpacity>      
                 <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Maps</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Maps</Text></TouchableOpacity>
-                </ScrollView>
+              </ScrollView>
             </View>           
             <View style={styles.cardDiv}>                
                 <View style={styles.profileArea}>
