@@ -1,25 +1,26 @@
 import { View, Image, Text ,TouchableOpacity,ScrollView} from "react-native";
 import { Tab,  TabView } from '@rneui/themed';
 import { styles } from "./employee-list-item-detail.style";
+import Slideshow from '../../../shared-components/image-slider'
 
 export const EmployeeListItemDetail = () => {
     return (
         <>
             
            <View style={styles.container}>
-            <View style={styles.cardDiv}>
                 <View style={styles.devideDiv}>
-                    <Image
+                    {/* <Image
                         style={{width:80,height:80,borderRadius:100, padding:2, backgroundColor:"#ccc"}}
                         resizeMode="cover"
                         source={{ uri: "https://avatars0.githubusercontent.com/u/32242596?s=460&u=1ea285743fc4b083f95d6ee0be2e7bb8dcfc676e&v=4" }}
-                    />
-                    <View style={styles.userText}>
+                    /> */}
+                    <Slideshow/>
+                    {/* <View style={styles.userText}>
                     <Text style={styles.userName}>Pranshu Chittora</Text>
                     <Text style={styles.phone}> +91 - 9015174477</Text>
-                    </View>
+                    </View> */}
                 </View>
-            </View>  
+            
             <View style={styles.buttnArea}>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Profile</Text></TouchableOpacity>

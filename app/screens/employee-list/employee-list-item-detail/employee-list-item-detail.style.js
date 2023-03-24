@@ -11,9 +11,8 @@ export const styles = StyleSheet.create({
     fontWeight: "700",
   },
   devideDiv:{
-    justifyContent:"flex-start", 
-    flexDirection:"row", 
-    alignItems:"center"
+    height:"25%",
+    position:"relative",
   },
   cardDiv: {
     borderRadius: 20,
@@ -64,6 +63,7 @@ export const styles = StyleSheet.create({
   },
   buttnArea:{
     flexDirection:"row",
+    marginTop:150,
   },
   whiteColor:{
     color:"#212121",
