@@ -4,7 +4,6 @@ import { styles } from "./employee-list.style";
 import { ajax } from "../../util/axios/axios";
 import { EmployeeListItem } from "./employee-list-item/employee-list-item";
 import { useNavigation } from "@react-navigation/native";
-import { Card } from '@rneui/themed';
 
 export const EmployeeList = () => {
   const [empList, setEmpList] = useState([]);
@@ -30,7 +29,7 @@ export const EmployeeList = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>       
+    <SafeAreaView style={styles.container}>
       <FlatList
         data={empList}
         renderItem={RenderItem}
