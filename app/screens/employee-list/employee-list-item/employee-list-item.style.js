@@ -4,7 +4,6 @@ export const styles = StyleSheet.create({
     item: {
         padding: 1,
         marginVertical: 3,
-        marginHorizontal:15,
     },
     title: {
         fontSize: 32,
