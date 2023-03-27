@@ -2,12 +2,15 @@ import { View, Image, Text ,TouchableOpacity,ScrollView} from "react-native";
 import { Tab,  TabView } from '@rneui/themed';
 import { styles } from "./employee-list-item-detail.style";
 import Slideshow from '../../../shared-components/image-slider'
+import BookingScreen from "../../../shared-components/BookingScreen";
+
 
 export const EmployeeListItemDetail = () => {
     return (
         <>
-            
+                 
            <View style={styles.container}>
+      
                 <View style={styles.devideDiv}>
                     {/* <Image
                         style={{width:80,height:80,borderRadius:100, padding:2, backgroundColor:"#ccc"}}
@@ -20,8 +23,8 @@ export const EmployeeListItemDetail = () => {
                     <Text style={styles.phone}> +91 - 9015174477</Text>
                     </View> */}
                 </View>
-            
-            <View style={styles.buttnArea}>
+                <BookingScreen/>
+            {/* <View style={styles.buttnArea}>
               <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Profile</Text></TouchableOpacity>
                 <TouchableOpacity style={styles.slideButton}><Text style={styles.whiteColor}>Address</Text></TouchableOpacity>      
@@ -38,7 +41,7 @@ export const EmployeeListItemDetail = () => {
                     <Text style={styles.marginBottom}><Text style={styles.textBold}>Nationality :</Text> Indian</Text>
                     <Text style={styles.marginBottom}><Text style={styles.textBold}>Work  :</Text> AICTE</Text>
                 </View>
-            </View>
+            </View> */}
             </View>
         </>
     )
